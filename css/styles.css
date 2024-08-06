@@ -453,6 +453,8 @@
 }
 
 .shop-item {
+  display: flex;
+  flex-direction: column;
   width: calc(33.33% - 30px);
   margin-top: 27px;
 }
@@ -472,9 +474,9 @@
 }
 
 .shop-content {
-  min-height: 273px;
+  flex-grow: 1;
   border: 3px solid #b59f5b;
-  padding: 40px 25px 15px 25px;
+  padding: 50px 25px 25px 25px;
   margin-top: -34px;
   position: relative;
 }
@@ -588,12 +590,14 @@
 .popup {
   background-color: white;
   max-width: 385px;
-  max-height: 590px;
   padding: 40px 30px;
   position: relative;
   z-index: 10;
 }
 .close-button {
+  background-image: url(../svg/form-x.svg);
+  background-color: transparent;
+  border: none;
   width: 18px;
   height: 18px;
   position: absolute;
@@ -702,8 +706,8 @@
     position: relative;
     border: none;
     background: transparent;
-    width: 30px;
-    height: 26px;
+    width: 22px;
+    height: 19px;
   }
 
   .burger::before,
@@ -720,7 +724,7 @@
 
   .burger::before {
     top: 0;
-    box-shadow: 0 11px 0 #ffffff;
+    box-shadow: 0 8px 0 #ffffff;
   }
 
   .burger::after {
@@ -734,7 +738,11 @@
   .menu-list {
     display: none;
   }
-
+  .name-blog {
+    font-size: 40px;
+    line-height: 1.38;
+    max-width: 615px;
+  }
   .begin-trend {
     font-size: 18px;
   }
@@ -837,14 +845,40 @@
   .trend-post:nth-child(even) {
     margin-left: 3px;
   }
-  .popup {
-    max-height: 100vh;
-  }
+
 }
 
 @media (max-width: 640px) and (orientation: portrait) {
   .header {
     background-image: url(../images/banner-mobile.jpg);
+    padding: 29px 30px 200px;
+  }
+
+  .top {
+    flex-direction: column-reverse;
+    align-items: normal;
+    margin-bottom: 35px;
+    padding: 0;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 170px;
+  }
+
+  .logo-img {
+    width: 270px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .name-blog {
+    font-size: 26px;
+    line-height: 1.38;
   }
 
   .begin {
@@ -897,9 +931,6 @@
     width: 100%;
     margin-right: 0 !important;
   }
-  .shop-content {
-    min-height: auto;
-  }
   .footer {
     margin: 40px 15px;
   }
@@ -919,9 +950,6 @@
 }
 
 @media (max-width: 320px) {
-  .popup {
-    max-height: 90vh;
-  }
   .textarea {
     min-height: auto;
   }
